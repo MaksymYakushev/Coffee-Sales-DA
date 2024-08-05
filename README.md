@@ -1,12 +1,12 @@
 # Cooffe-Sales-DA
 
 ## Table of Contents
-- [About the project](#about-the-project)
+- [About the Project](#about-the-project)
 - [About the Dataset](#about-the-dataset)
   - [Contents](#contents) 
 
 
-## About the project
+## About the Project
 
 Hello, everyone! This project is related to data analysis and visualization, and that it's one of the projects that will help me pursue a career as a data analyst. So, I will be detailing what I am doing and why, starting from data cleaning to presenting the results. Let's go!
 
