@@ -3,7 +3,10 @@
 ## Table of Contents
 - [About the Project](#about-the-project)
 - [About the Dataset](#about-the-dataset)
-  - [Contents](#contents) 
+  - [Contents](#contents)
+- [pgAdmin 4](#pgAdmin-4)
+  - [Table Configuration in pgAdmin 4](#table-configuration-in-pgAdmin-4)
+- [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
 
 
 ## About the Project
@@ -22,4 +25,11 @@ Hello, everyone! This project is related to data analysis and visualization, and
 - **card:** transaction number
 - **money:** transaction amount	
 - **coffee_name:** the name of the coffee
+
+## pgAdmin 4
+
+### Table Configuration in pgAdmin 4
+
+## Data Cleaning and Preprocessing 
+
 
