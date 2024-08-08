@@ -28,7 +28,13 @@ Hello, everyone! This project is related to data analysis and visualization, and
 
 ## pgAdmin 4
 
+So, I chosed pgAdmin 4 for my data analysis project because it's a powerful, open-source management tool for PostgreSQL, one of the most advanced and widely-used relational databases. pgAdmin 4 provides an intuitive graphical interface that simplifies complex database operations, such as querying, managing database schemas, and performing administrative tasks. The program also supports advanced features like SQL query writing with syntax highlighting, graphical query plan visualization, and the ability to manage multiple database connections simultaneously. Additionally, pgAdmin 4 is highly customizable, allowing me to tailor the environment to my specific needs, which significantly enhances my productivity during data analysis. Its cross-platform compatibility and active development community ensure that it is a reliable tool that receives regular updates and improvements. Overall, pgAdmin 4 offers the perfect balance of functionality, ease of use, and flexibility for efficiently handling complex data analysis tasks.
+
 ### Table Configuration in pgAdmin 4
+
+I created a database on my own server, which I named "coffee_db". Then, I created a table called "coffee", where I added all the columns with data and their data types.
+
+
 
 ## Data Cleaning and Preprocessing 
 
