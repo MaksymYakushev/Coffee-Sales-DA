@@ -37,6 +37,11 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 | Column | Data type |
 |---|---|
 | date | date |
+| datetime | timestamp without time zone |
+| cash_type | text |
+| card | text |
+| money | numeric |
+| coffee_name | text |
 
 ## Data Cleaning and Preprocessing 
 
