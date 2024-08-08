@@ -43,6 +43,10 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 | money | numeric |
 | coffee_name | text |
 
+## Structure and Project Plan
+
 ## Data Cleaning and Preprocessing 
+
+
 
 
