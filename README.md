@@ -19,12 +19,12 @@ Hello, everyone! This project is related to data analysis and visualization, and
 [Dataset](https://github.com/MaksymYakushev/Cooffe-Sales-DA/blob/main/Data/coffee_dataset.csv)
 
 ### Contents
-- **date:** date of the transaction (YYYY-MM-DD)	
-- **datetime:** the exact time of the transaction	(HH:MM:SS)
-- **cash_type:** paymaent type (cash/ card)
-- **card:** transaction number
-- **money:** transaction amount	
-- **coffee_name:** the name of the coffee
+- `date:` date of the transaction (YYYY-MM-DD)	
+- `datetime:` the exact time of the transaction	(HH:MM:SS)
+- `cash_type:` paymaent type (cash/ card)
+- `card:` transaction number
+- `money:` transaction amount	
+- `coffee_name:` the name of the coffee
 
 ## pgAdmin 4
 
@@ -32,9 +32,11 @@ So, I chosed pgAdmin 4 for my data analysis project because it's a powerful, ope
 
 ### Table Configuration in pgAdmin 4
 
-I created a database on my own server, which I named "coffee_db". Then, I created a table called "coffee", where I added all the columns with data and their data types.
+I created a database on my own server, which I named `coffee_db`. Then, I created a table called `coffee`, where I added all the columns with data and their data types.
 
-
+| Column | Data type |
+|---|---|
+| date | date |
 
 ## Data Cleaning and Preprocessing 
 
