@@ -1,4 +1,4 @@
-# Cooffe-Sales-DA
+# Coffee-Sales-DA
 
 ## Table of Contents
 - [About the Project](#about-the-project)
