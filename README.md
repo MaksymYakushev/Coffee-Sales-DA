@@ -49,7 +49,9 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 
 ## Data Cleaning and Preprocessing 
 1. We are removing the `card` column. It contains data about the transaction number, which is not needed for my analysis.
-   ```fnvjf```
+   ```plaintext
+SELECT
+```
 
 
 
