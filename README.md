@@ -50,25 +50,25 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 ## Data Cleaning and Preprocessing 
 1. I removed the `card` column. It contains data about the transaction number which is not needed for my analysis. I used command `DROP COLUMN` to delete a column. ʼ
    
-   ```plaintext
+   ```sql
     ALTER TABLE coffee
     DROP COLUMN card
    ```
 2. I added a new column named `money_euro.` This column contains data on prices in Euros, where 1 Euro equals 44 Hryvnias. I used command `ADD COLUMN` to add a new one column with the data type of numeric.
    
-   ```plaintext
+   ```sql
     ALTER TABLE coffee
     ADD COLUMN money_euro NUMERIC
    ```
    I got a column with data which eqequals NULL. Next, I updated the column data using `UPDATE` command. Also, I used the `ROUND` function to round numbers to a specified number of decimal places.
 
-   ```plaintext
+   ```sql
    UPDATE coffee
    SET money_euro = ROUND(money / 44, 2);
    ```
 3. Next I checked `date` and `datetime` columns. I used the functions `MIN` and `MAX`.
 
-   ```plaintext
+   ```sql
    SELECT 
 	    MIN(date) AS MIN_date
 	    , MAX(date) AS MAX_date
@@ -86,17 +86,17 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 
 4. Next I checked `cash_type`. I used function `COUNT` to count the number of rows.
 
-   ```plaintext
+   ```sql
    SELECT
-   	 COUNT(*)
+   	   COUNT(*)
    FROM coffee
    ```
    I got 976. Next I counted `cash_type` the number of `cash_type` by grouping by `cash_type`.
 
     ```sql
    SELECT
-	  cash_type
-	  , COUNT(cash_type)
+	   cash_type
+	   , COUNT(cash_type)
    FROM coffee
    GROUP BY 1;
    ```
