@@ -95,8 +95,8 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 
     ```sql
    SELECT
-	cash_type
-	, COUNT(cash_type)
+	  cash_type
+	  , COUNT(cash_type)
    FROM coffee
    GROUP BY 1;
    ```
