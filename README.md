@@ -14,7 +14,7 @@
 Hello, everyone! This project is related to data analysis and visualization, and that it's one of the projects that will help me pursue a career as a data analyst. So, I will be detailing what I am doing and why, starting from data cleaning to presenting the results. Let's go!
 
 ## About the Dataset 
-І used this dataset for data analysis and visualization. This dataset was provided by a Ukrainian coffee shop in Odesa. It consists of data on coffee purchases, the time of purchase, price, and type of payment.
+І used this dataset for data analysis and visualization. This dataset was provided by a Ukrainian cafe in Odesa. It consists of data on coffee purchases, the time of purchase, price, and type of payment.
 
 [Dataset](https://github.com/MaksymYakushev/Cooffe-Sales-DA/blob/main/Data/coffee_dataset.csv)
 
@@ -48,22 +48,40 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 1. Data Cleaning and Preprocessing 
 
 ## Data Cleaning and Preprocessing 
-1. I removed the `card` column. It contains data about the transaction number which is not needed for my analysis. I used command `DROP COLUMN` to delete a column. 
+1. I removed the `card` column. It contains data about the transaction number which is not needed for my analysis. I used command `DROP COLUMN` to delete a column. ʼ
+   
    ```plaintext
     ALTER TABLE coffee
     DROP COLUMN card
    ```
-2. I added a new column named `money_euro.` This column contains data on prices in Euros, where 1 Euro equals 44 Hryvnias. I used command `ADD COLUMN` to add a new one column with the data type of numeric.
+3. I added a new column named `money_euro.` This column contains data on prices in Euros, where 1 Euro equals 44 Hryvnias. I used command `ADD COLUMN` to add a new one column with the data type of numeric.
+   
    ```plaintext
     ALTER TABLE coffee
     ADD COLUMN money_euro NUMERIC
    ```
    I got a column with data which eqequals NULL. Next, I updated the column data using `UPDATE` command. Also, I used the `ROUND` function to round numbers to a specified number of decimal places.
+
    ```plaintext
    UPDATE coffee
    SET money_euro = ROUND(money / 44, 2);
    ```
-3. Date checking
+5. Next I checked `date` and `datetime` columns. I udef the functions `MIN` and `MAX`.
+
+   ```plaintext
+   SELECT 
+	    MIN(date) AS MIN_date
+	    , MAX(date) AS MAX_date
+	    , MIN(datetime) AS MIN_datetime
+	    , MAX(datetime) AS MAX_datetime
+   FROM coffee
+   ```
+   
+   ```plaintext
+   | | MIN_date | MAX_date | MIN_datetime | MAX_datetime |
+   | 1 | 2024-03-01 | 2024-07-17 | 07:33:06 | 22:55:37 |
+   ```
+   As a result I obtained accurate results. The café opens around 7 AM and closes at 11 PM.
 
 
 
