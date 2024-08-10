@@ -54,7 +54,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
     ALTER TABLE coffee
     DROP COLUMN card
    ```
-3. I added a new column named `money_euro.` This column contains data on prices in Euros, where 1 Euro equals 44 Hryvnias. I used command `ADD COLUMN` to add a new one column with the data type of numeric.
+2. I added a new column named `money_euro.` This column contains data on prices in Euros, where 1 Euro equals 44 Hryvnias. I used command `ADD COLUMN` to add a new one column with the data type of numeric.
    
    ```plaintext
     ALTER TABLE coffee
@@ -66,7 +66,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    UPDATE coffee
    SET money_euro = ROUND(money / 44, 2);
    ```
-5. Next I checked `date` and `datetime` columns. I udef the functions `MIN` and `MAX`.
+3. Next I checked `date` and `datetime` columns. I used the functions `MIN` and `MAX`.
 
    ```plaintext
    SELECT 
@@ -76,6 +76,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 	    , MAX(datetime) AS MAX_datetime
    FROM coffee
    ```
+   Result:
    
    ```plaintext
    | | MIN_date | MAX_date | MIN_datetime | MAX_datetime |
