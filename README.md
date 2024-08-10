@@ -48,27 +48,21 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 1. Data Cleaning and Preprocessing 
 
 ## Data Cleaning and Preprocessing 
-1. I removed the `card` column. It contains data about the transaction number which is not needed for my analysis. I used command `DROP COLUMN` to delete a column.
-2. 
+1. I removed the `card` column. It contains data about the transaction number which is not needed for my analysis. I used command `DROP COLUMN` to delete a column. 
    ```plaintext
     ALTER TABLE coffee
     DROP COLUMN card
    ```
-   
-3. I added a new column named `money_euro.` This column contains data on prices in Euros, where 1 Euro equals 44 Hryvnias. I used command `ADD COLUMN` to add a new one column with the data type of numeric.
-   
+2. I added a new column named `money_euro.` This column contains data on prices in Euros, where 1 Euro equals 44 Hryvnias. I used command `ADD COLUMN` to add a new one column with the data type of numeric.
    ```plaintext
     ALTER TABLE coffee
     ADD COLUMN money_euro NUMERIC
    ```
-   
-  I got a column with data which eqequals NULL. Next, I updated the column data using `UPDATE` command. Also, I used the `ROUND` function to round numbers to a specified number of decimal places.
-  
-  ```plaintext
-  UPDATE coffee
-  SET money_euro = ROUND(money / 44, 2);
-  ```
-
+   I got a column with data which eqequals NULL. Next, I updated the column data using `UPDATE` command. Also, I used the `ROUND` function to round numbers to a specified number of decimal places.
+   ```plaintext
+   UPDATE coffee
+   SET money_euro = ROUND(money / 44, 2);
+   ```
 3. Date checking
 
 
