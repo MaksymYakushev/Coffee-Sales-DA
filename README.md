@@ -109,12 +109,12 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    ```
    I took the same number as the rows.
 
-5. Next I checked `money`.
+5. Next I checked `money`. 
 
     ```sql
    SELECT 
-	MIN(money)
-	, MAX(money)
+	   MIN(money)
+	  , MAX(money)
    FROM coffee;
    ```
    Result:
@@ -123,10 +123,11 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    |  | min | max |
    | 1 | 23.02 | 40 |
    ```
+   I got good and adequate results.
     
    ```sql
    SELECT 
-	COUNT(money)
+	   COUNT(money)
    FROM coffee
    WHERE money IS NULL
    ```
@@ -136,6 +137,24 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    |  | count |
    | 1 | 0 |
    ```
+   And here I got 0 values which equals NULL.
+
+   6. Finnaly, I checked `coffee_name`.
+   ```sql
+   SELECT 
+	   COUNT(coffee_name)
+   FROM coffee
+   WHERE coffee_name IS NULL
+   ```
+    Result:
+   
+    ```plaintext
+   |  | count |
+   | 1 | 0 |
+   ```
+   I got 0 values which equals NULL.
+   
+   
 
 
 
