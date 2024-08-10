@@ -88,7 +88,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 
    ```sql
    SELECT
-   	   COUNT(*)
+   	COUNT(*)
    FROM coffee
    ```
    I got 976. Next I counted `cash_type` the number of `cash_type` by grouping by `cash_type`.
@@ -110,6 +110,32 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    I took the same number as the rows.
 
 5. Next I checked `money`.
+
+    ```sql
+   SELECT 
+	MIN(money)
+	, MAX(money)
+   FROM coffee;
+   ```
+   Result:
+   
+    ```plaintext
+   |  | min | max |
+   | 1 | 23.02 | 40 |
+   ```
+    
+   ```sql
+   SELECT 
+	COUNT(money)
+   FROM coffee
+   WHERE money IS NULL
+   ```
+   Result:
+   
+    ```plaintext
+   |  | count |
+   | 1 | 0 |
+   ```
 
 
 
