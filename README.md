@@ -88,7 +88,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 
    ```sql
    SELECT
-   	COUNT(*)
+        COUNT(*)
    FROM coffee
    ```
    I got 976. Next I counted `cash_type` the number of `cash_type` by grouping by `cash_type`.
