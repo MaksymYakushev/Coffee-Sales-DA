@@ -87,16 +87,16 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 4. Next I checked `cash_type`. I used function `COUNT` to count the number of rows.
 
    ```plaintext
-   SELECT 
-	COUNT(*)
+   SELECT
+   		COUNT(*)
    FROM coffee
    ```
    I got 976. Next I counted `cash_type` the number of `cash_type` by grouping by `cash_type`.
 
     ```plaintext
    SELECT 
-	cash_type
-	, COUNT(cash_type)
+		cash_type
+		, COUNT(cash_type)
    FROM coffee
    GROUP BY 1;
    ```
