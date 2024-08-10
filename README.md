@@ -58,11 +58,13 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
     ALTER TABLE coffee
     ADD COLUMN money_euro NUMERIC
    ```
+   
   I got a column with data which eqequals NULL. Next, I updated the column data using `UPDATE` command. Also, I used the `ROUND` function to round numbers to a specified number of decimal places.
   ```plaintext
   UPDATE coffee
   SET money_euro = ROUND(money / 44, 2);
   ```
+3.
 
 
 
