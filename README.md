@@ -82,7 +82,34 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    | | MIN_date | MAX_date | MIN_datetime | MAX_datetime |
    | 1 | 2024-03-01 | 2024-07-17 | 07:33:06 | 22:55:37 |
    ```
-   As a result I obtained accurate results. The café opens around 7 AM and closes at 11 PM.
+   As a result I obtained accurate results. The cafe opens around 7 AM and closes at 11 PM.
+
+4. Next I checked `cash_type`. I used function `COUNT` to count the number of rows.
+
+   ```plaintext
+   SELECT 
+	COUNT(*)
+   FROM coffee
+   ```
+   I got 976. Next I counted `cash_type` the number of `cash_type` by grouping by `cash_type`.
+
+    ```plaintext
+   SELECT 
+	cash_type
+	, COUNT(cash_type)
+   FROM coffee
+   GROUP BY 1;
+   ```
+   Result:
+   
+   ```plaintext
+   | cash_type | count |
+   | 1 | cash | 89 |
+   | 2 | card | 887 |
+   ```
+   I took the same number as the rows.
+
+5. Next I checked `money`.
 
 
 
