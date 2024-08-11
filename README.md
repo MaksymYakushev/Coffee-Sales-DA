@@ -139,7 +139,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    ```
    And here I got 0 values which equals NULL.
 
-   6. Finnaly, I checked `coffee_name`.
+6. Finnaly, I checked `coffee_name`.
    ```sql
    SELECT 
 	   COUNT(coffee_name)
