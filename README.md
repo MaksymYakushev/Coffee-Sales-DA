@@ -182,6 +182,15 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    ```
 
    a) The most profitable day
+   ```sql
+  SELECT 
+	 day_of_week
+	 , SUM(money) AS profit
+  FROM 
+	 coffee
+  GROUP BY 1
+  ORDER BY 2 DESC
+   ```
    
    b) The most profitable hours
    
