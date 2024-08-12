@@ -8,6 +8,7 @@
   - [Table Configuration in pgAdmin 4](#table-configuration-in-pgAdmin-4)
 - [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
 - [Data Analysis](#data-analysis)
+  - [Determining the peak time](#determining-the-peak-time)  
 
 
 ## About the Project
@@ -158,7 +159,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 
 ## Data Analysis
 
-1. Determining the peak time
+### 1. Determining the peak time
    
    1.1 The most peak time on weekdays
    
