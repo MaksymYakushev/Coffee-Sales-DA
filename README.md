@@ -163,15 +163,15 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    
    1.1 The most peak time on weekdays
    
-   	a) The most profitable day
+   a) The most profitable day
    
-   	b) The most profitable hours
+   b) The most profitable hours
    
    1.2 The most peak time on weekends
    
-   	a) The most profitable day
+   a) The most profitable day
    
-   	b) The most profitable hours
+   b) The most profitable hours
    
    
 
