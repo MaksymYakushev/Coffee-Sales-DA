@@ -7,6 +7,7 @@
 - [pgAdmin 4](#pgAdmin-4)
   - [Table Configuration in pgAdmin 4](#table-configuration-in-pgAdmin-4)
 - [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
+- [Data Analysis](#data-analysis)
 
 
 ## About the Project
@@ -45,7 +46,8 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 
 ## Structure and Project Plan
 
-1. Data Cleaning and Preprocessing 
+1. Data Cleaning and Preprocessing [click](#data-cleaning-and-preprocessing)
+2. Data Analysis [click](#data-analysis)
 
 ## Data Cleaning and Preprocessing 
 1. I removed the `card` column. It contains data about the transaction number which is not needed for my analysis. I used command `DROP COLUMN` to delete a column. ʼ
@@ -153,6 +155,22 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    | 1 | 0 |
    ```
    I got 0 values which equals NULL.
+
+## Data Analysis
+
+1. Determining the peak time
+   
+   1.1 The most peak time on weekdays
+   
+   	a) The most profitable day
+   
+   	b) The most profitable hours
+   
+   1.2 The most peak time on weekends
+   
+   	a) The most profitable day
+   
+   	b) The most profitable hours
    
    
 
