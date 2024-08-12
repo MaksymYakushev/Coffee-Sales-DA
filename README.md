@@ -8,7 +8,7 @@
   - [Table Configuration in pgAdmin 4](#table-configuration-in-pgAdmin-4)
 - [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
 - [Data Analysis](#data-analysis)
-  - [Determining the peak time](#determining-the-peak-time)  
+  - [Determining the peak time](#1-determining-the-peak-time)  
 
 
 ## About the Project
