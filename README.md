@@ -183,14 +183,26 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 
    a) The most profitable day
    ```sql
-  SELECT 
-	   day_of_week
-	   , SUM(money) AS profit
-  FROM 
-	   coffee
-  GROUP BY 1
-  ORDER BY 2 DESC
+   SELECT 
+	    day_of_week AS day
+	    , SUM(money) AS profit
+   FROM 
+	    coffee
+   GROUP BY 1
+   ORDER BY 2 DESC
    ```
+  
+   Result:
+   
+   | | day | profit |
+   |---|---|---|
+   | 1 | Tuesday | 5102.06|
+   | 2 | Thursday | 4885.32 |
+   | 3 | Sunday | 4849.86 |
+   | 4 | Friday | 4681.94 |
+   | 5 | Saturday | 4643.16 |
+   | 6 | Monday | 4541.08 |
+   | 7 | Wednesday | 4363.22|
    
    b) The most profitable hours
    
