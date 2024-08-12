@@ -160,8 +160,10 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
 ## Data Analysis
 
 ### 1. Determining the peak time
-   
+
    1.1 The most peak time on weekdays
+   We know that people love coffee and always drink it—whether on their way to work, during work, at lunch with colleagues, in the evening after a long day, or simply while taking a walk. Therefore, I suggest dividing the café's working hours into four parts, which are as follows:
+   
    
    a) The most profitable day
    
