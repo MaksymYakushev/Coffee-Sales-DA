@@ -205,6 +205,34 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    | 7 | Wednesday | 4363.22|
    
    b) The most profitable hours
+   ```sql
+   SELECT 
+            day_of_week AS day
+            , SUM(CASE 
+                   WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
+                   OR (EXTRACT(HOUR FROM datetime) = 10 AND EXTRACT(MINUTE FROM datetime) = 0)
+                   THEN money 
+                   ELSE 0 END) AS morning_time
+            , SUM(CASE 
+                   WHEN EXTRACT(HOUR FROM datetime) BETWEEN 12 AND 14 
+                   OR (EXTRACT(HOUR FROM datetime) = 15 AND EXTRACT(MINUTE FROM datetime) = 0)
+                   THEN money
+		   ELSE 0 END) AS lunchtime
+            , SUM(CASE 
+                   WHEN EXTRACT(HOUR FROM datetime) BETWEEN 17 AND 19 
+                   OR (EXTRACT(HOUR FROM datetime) = 20 AND EXTRACT(MINUTE FROM datetime) = 0)
+                   THEN money 
+                   ELSE 0 END) AS evening_time
+            , SUM(CASE 
+           	   WHEN EXTRACT(HOUR FROM datetime) BETWEEN 21 AND 22 
+                   OR (EXTRACT(HOUR FROM datetime) = 23 AND EXTRACT(MINUTE FROM datetime) = 0)
+                   THEN money 
+                   ELSE 0 END) AS late_hours
+    FROM 
+            coffee
+    GROUP BY 1
+    ORDER BY 1
+```
    
    1.2 The most peak time on weekends
    
