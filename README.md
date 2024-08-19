@@ -208,12 +208,12 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    b) The most profitable hours
    ```sql
    SELECT 
-   	day_of_week AS day
-    	, SUM(CASE 
+    day_of_week AS day
+    , SUM(CASE 
 			WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
 				OR (EXTRACT(HOUR FROM datetime) = 9 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money 
             ELSE 0 
-   END) AS morning_time
+          END) AS morning_time
     , SUM(CASE 
             WHEN EXTRACT(HOUR FROM datetime) BETWEEN 10 AND 12 
             	OR (EXTRACT(HOUR FROM datetime) = 12 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money
@@ -234,11 +234,9 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
             	OR (EXTRACT(HOUR FROM datetime) = 23 AND EXTRACT(MINUTE FROM datetime) = 00) THEN money 
             ELSE 0 
           END) AS late_hours
-FROM coffee
-GROUP BY 1
-ORDER BY 2,3,4,5 DESC
-
-   
+   FROM coffee
+   GROUP BY 1
+   ORDER BY 2,3,4,5 DESC
    ```
    
    1.2 The most peak time on weekends
