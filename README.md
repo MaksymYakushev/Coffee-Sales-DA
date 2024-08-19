@@ -167,10 +167,11 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    
    | Time: | Determining |
    |---|---|
-   |07:00 - 10:00| Morning time |
-   |12:00 - 15:00| Lunchtime |
-   |17:00 - 20:00| Evening time |
-   |21:00 - 23:00| Late hours |
+   |07:00 - 09:59| Morning time |
+   |10:00 - 12:59| Lunch time |
+   |13:00 - 15:59| Dinner time |
+   |16:00 - 19:59| Evening time |
+   |20:00 - 23:00| Late hours |
    
    And I also added a new column called  `day_of_week`. That column contains the day of week (Monday, Tuesday, ...):
    ```sql
@@ -207,32 +208,38 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    b) The most profitable hours
    ```sql
    SELECT 
-            day_of_week AS day
-            , SUM(CASE 
-                   WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
-                   OR (EXTRACT(HOUR FROM datetime) = 10 AND EXTRACT(MINUTE FROM datetime) = 0)
-                   THEN money 
-                   ELSE 0 END) AS morning_time
-            , SUM(CASE 
-                   WHEN EXTRACT(HOUR FROM datetime) BETWEEN 12 AND 14 
-                   OR (EXTRACT(HOUR FROM datetime) = 15 AND EXTRACT(MINUTE FROM datetime) = 0)
-                   THEN money
-		   ELSE 0 END) AS lunchtime
-            , SUM(CASE 
-                   WHEN EXTRACT(HOUR FROM datetime) BETWEEN 17 AND 19 
-                   OR (EXTRACT(HOUR FROM datetime) = 20 AND EXTRACT(MINUTE FROM datetime) = 0)
-                   THEN money 
-                   ELSE 0 END) AS evening_time
-            , SUM(CASE 
-           	   WHEN EXTRACT(HOUR FROM datetime) BETWEEN 21 AND 22 
-                   OR (EXTRACT(HOUR FROM datetime) = 23 AND EXTRACT(MINUTE FROM datetime) = 0)
-                   THEN money 
-                   ELSE 0 END) AS late_hours
-    FROM 
-            coffee
-    GROUP BY 1
-    ORDER BY 1
-```
+   	day_of_week AS day
+    	, SUM(CASE 
+			WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
+				OR (EXTRACT(HOUR FROM datetime) = 9 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money 
+            ELSE 0 
+   END) AS morning_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 10 AND 12 
+            	OR (EXTRACT(HOUR FROM datetime) = 12 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money
+            ELSE 0 
+          END) AS lunch_time
+	, SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 13 AND 15 
+            	OR (EXTRACT(HOUR FROM datetime) = 15 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money
+            ELSE 0 
+          END) AS dinner_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 16 AND 19 
+            	OR (EXTRACT(HOUR FROM datetime) = 19 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money 
+            ELSE 0 
+          END) AS evening_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 20 AND 23 
+            	OR (EXTRACT(HOUR FROM datetime) = 23 AND EXTRACT(MINUTE FROM datetime) = 00) THEN money 
+            ELSE 0 
+          END) AS late_hours
+FROM coffee
+GROUP BY 1
+ORDER BY 2,3,4,5 DESC
+
+   
+   ```
    
    1.2 The most peak time on weekends
    
