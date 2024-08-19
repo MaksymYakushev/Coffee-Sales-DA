@@ -210,8 +210,8 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    SELECT 
     day_of_week AS day
     , SUM(CASE 
-			WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
-				OR (EXTRACT(HOUR FROM datetime) = 9 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money 
+	    WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
+	        OR (EXTRACT(HOUR FROM datetime) = 9 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money 
             ELSE 0 
           END) AS morning_time
     , SUM(CASE 
@@ -219,7 +219,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
             	OR (EXTRACT(HOUR FROM datetime) = 12 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money
             ELSE 0 
           END) AS lunch_time
-	, SUM(CASE 
+    , SUM(CASE 
             WHEN EXTRACT(HOUR FROM datetime) BETWEEN 13 AND 15 
             	OR (EXTRACT(HOUR FROM datetime) = 15 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money
             ELSE 0 
