@@ -254,8 +254,40 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    1.2 The most peak time on weekends
    
    a) The most profitable day
+
+   I modificated 1.1 (a) request and add `WHERE day_of_week IN ('Saturday', 'Sunday')` i.e added days of weekends
+   
+   ```sql
+   SELECT 
+	    day_of_week AS day
+	    , SUM(money) AS profit
+   FROM 
+	    coffee
+   WHERE day_of_week IN ('Saturday', 'Sunday')
+   GROUP BY 1
+   ORDER BY 2 DESC
+   ```
+
+   Result:
+   
+   | | day | profit |
+   |---|---|---|
+   | 1 | Sunday | 4849.86|
+   | 2 | Saturday | 4643.16 |
    
    b) The most profitable hours
+
+   I have also modificated 1.1 (b) request and add `WHERE day_of_week IN ('Saturday', 'Sunday')` i.e added days of weekends
+
+   Result:
+   
+   | day | morning_time | lunch_time | dinner_time | evening_time | late_hours |
+   |----------|--------------|------------|-------------|--------------|------------|
+   | Saturday | 324.38 | 1456.32 | 1028.20 | 1421.68 | 412.58 |
+   | Sunday | 374.58 | 1487.80 | 840.08 | 1375.18 | 772.22 |
+   
+
+
    
    
 
