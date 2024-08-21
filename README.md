@@ -290,6 +290,28 @@ Result:
 
 2.1 The most popular ordered coffee 
 
+```sql
+SELECT
+    coffee_name AS type_of_coffee
+    , COUNT(coffee_name) AS popularity
+FROM coffee
+GROUP BY 1
+ORDER BY 2 DESC
+```
+
+Result:
+
+| | type_of_coffee | popularity |
+|---|---|---|
+| 1 | Americano with Milk | 227 |
+| 2 | Latte | 203 |
+| 3 | Cappuccino | 177 |
+| 4 | Americano | 145 |
+| 5 | Cortado | 86 |
+| 6 | Hot Chocolate | 71 |
+| 7 | Espresso | 39 |
+| 8 | Cocoa | 28 | 
+
 2.2 Determining the type of coffee purchased during peak time
 
 2.3 Percentage distribution of different types of coffee
