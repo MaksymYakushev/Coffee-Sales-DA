@@ -166,45 +166,45 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    
 We know that people love coffee and always drink it—whether on their way to work, during work, at lunch with colleagues, in the evening after a long day, or simply while taking a walk. Therefore, I suggest dividing the café's working hours into four parts, which are as follows:
    
-   | Time: | Determining |
-   |---|---|
-   |07:00 - 09:59| Morning time |
-   |10:00 - 12:59| Lunch time |
-   |13:00 - 15:59| Dinner time |
-   |16:00 - 19:59| Evening time |
-   |20:00 - 23:00| Late hours |
+| Time: | Determining |
+|---|---|
+|07:00 - 09:59| Morning time |
+|10:00 - 12:59| Lunch time |
+|13:00 - 15:59| Dinner time |
+|16:00 - 19:59| Evening time |
+|20:00 - 23:00| Late hours |
    
-   And I also added a new column called  `day_of_week`. That column contains the day of week (Monday, Tuesday, ...):
-   ```sql
-   ALTER TABLE coffee
-   ADD COLUMN day_of_week VARCHAR(15);
+And I also added a new column called  `day_of_week`. That column contains the day of week (Monday, Tuesday, ...):
+```sql
+ALTER TABLE coffee
+ADD COLUMN day_of_week VARCHAR(15);
 
-   UPDATE coffee
-   SET day_of_week = TO_CHAR(date, 'FMDay')
-   ```
+UPDATE coffee
+SET day_of_week = TO_CHAR(date, 'FMDay')
+```
 
-   a) The most profitable day
-   ```sql
-   SELECT 
-	    day_of_week AS day
-	    , SUM(money) AS profit
-   FROM 
-	    coffee
-   GROUP BY 1
-   ORDER BY 2 DESC
-   ```
+a) The most profitable day
+```sql
+SELECT 
+	day_of_week AS day
+	, SUM(money) AS profit
+FROM 
+	coffee
+GROUP BY 1
+ORDER BY 2 DESC
+```
   
-   Result:
+Result:
    
-   | | day | profit |
-   |---|---|---|
-   | 1 | Tuesday | 5102.06|
-   | 2 | Thursday | 4885.32 |
-   | 3 | Sunday | 4849.86 |
-   | 4 | Friday | 4681.94 |
-   | 5 | Saturday | 4643.16 |
-   | 6 | Monday | 4541.08 |
-   | 7 | Wednesday | 4363.22|
+| | day | profit |
+|---|---|---|
+| 1 | Tuesday | 5102.06|
+| 2 | Thursday | 4885.32 |
+| 3 | Sunday | 4849.86 |
+| 4 | Friday | 4681.94 |
+| 5 | Saturday | 4643.16 |
+| 6 | Monday | 4541.08 |
+| 7 | Wednesday | 4363.22|
    
    b) The most profitable hours
    ```sql
