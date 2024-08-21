@@ -8,7 +8,8 @@
   - [Table Configuration in pgAdmin 4](#table-configuration-in-pgAdmin-4)
 - [Data Cleaning and Preprocessing](#data-cleaning-and-preprocessing)
 - [Data Analysis](#data-analysis)
-  - [Determining the peak time](#1-determining-the-peak-time)  
+  - [Determining the peak time](#1-determining-the-peak-time)
+  - [Determining the popularity of orders for different types of coffee](#2-determining-the-popularity-of-orders-for-different-types-of-coffee) 
 
 
 ## About the Project
@@ -285,6 +286,14 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    |----------|--------------|------------|-------------|--------------|------------|
    | Saturday | 324.38 | 1456.32 | 1028.20 | 1421.68 | 412.58 |
    | Sunday | 374.58 | 1487.80 | 840.08 | 1375.18 | 772.22 |
+
+### 2. Determining the popularity of orders for different types of coffee
+
+2.1 The most popular ordered coffee 
+
+2.2 Determining the type of coffee purchased during peak time
+
+2.3 Percentage distribution of different types of coffee
    
 
 
