@@ -186,10 +186,10 @@ SET day_of_week = TO_CHAR(date, 'FMDay')
 a) The most profitable day
 ```sql
 SELECT 
-	day_of_week AS day
-	, SUM(money) AS profit
+    day_of_week AS day
+    , SUM(money) AS profit
 FROM 
-	coffee
+    coffee
 GROUP BY 1
 ORDER BY 2 DESC
 ```
@@ -206,9 +206,9 @@ Result:
 | 6 | Monday | 4541.08 |
 | 7 | Wednesday | 4363.22|
    
-   b) The most profitable hours
-   ```sql
-   SELECT 
+b) The most profitable hours
+```sql
+SELECT 
     day_of_week AS day
     , SUM(CASE 
 	    WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
@@ -235,57 +235,56 @@ Result:
             	OR (EXTRACT(HOUR FROM datetime) = 23 AND EXTRACT(MINUTE FROM datetime) = 00) THEN money 
             ELSE 0 
           END) AS late_hours
-   FROM coffee
-   GROUP BY 1
-   ```
+FROM coffee
+GROUP BY 1
+```
 
-   Result:
+Result:
    
-   | day | morning_time | lunch_time | dinner_time | evening_time | late_hours |
-   |----------|--------------|------------|-------------|--------------|------------|
-   | Tuesday | 393.46 | 1504.28 | 878.80 | 1724.96 | 600.56 |
-   | Saturday | 324.38 | 1456.32 | 1028.20 | 1421.68 | 412.58 |
-   | Friday | 291.76 | 1104.08 | 1060.84 | 1488.52 | 736.74 |
-   | Thursday | 370.82 | 1209.68 | 860.18 | 1626.28 | 818.36 |
-   | Wednesday | 319.88 | 1246.56 | 914.76 | 1306.92 | 575.10 |
-   | Sunday | 374.58 | 1487.80 | 840.08 | 1375.18 | 772.22 |
-   | Monday | 93.56 | 1589.32 | 942.00 | 1508.92 | 407.28 |
+| day | morning_time | lunch_time | dinner_time | evening_time | late_hours |
+|----------|--------------|------------|-------------|--------------|------------|
+| Tuesday | 393.46 | 1504.28 | 878.80 | 1724.96 | 600.56 |
+| Saturday | 324.38 | 1456.32 | 1028.20 | 1421.68 | 412.58 |
+| Friday | 291.76 | 1104.08 | 1060.84 | 1488.52 | 736.74 |
+| Thursday | 370.82 | 1209.68 | 860.18 | 1626.28 | 818.36 |
+| Wednesday | 319.88 | 1246.56 | 914.76 | 1306.92 | 575.10 |
+| Sunday | 374.58 | 1487.80 | 840.08 | 1375.18 | 772.22 |
+| Monday | 93.56 | 1589.32 | 942.00 | 1508.92 | 407.28 |
    
+1.2 The most peak time on weekends
+   
+a) The most profitable day
 
-   1.2 The most peak time on weekends
+I modificated 1.1 (a) request and add `WHERE day_of_week IN ('Saturday', 'Sunday')` i.e added days of weekends
    
-   a) The most profitable day
+```sql
+SELECT 
+    day_of_week AS day
+    , SUM(money) AS profit
+FROM 
+   coffee
+WHERE day_of_week IN ('Saturday', 'Sunday')
+GROUP BY 1
+ORDER BY 2 DESC
+```
 
-   I modificated 1.1 (a) request and add `WHERE day_of_week IN ('Saturday', 'Sunday')` i.e added days of weekends
+Result:
    
-   ```sql
-   SELECT 
-	    day_of_week AS day
-	    , SUM(money) AS profit
-   FROM 
-	    coffee
-   WHERE day_of_week IN ('Saturday', 'Sunday')
-   GROUP BY 1
-   ORDER BY 2 DESC
-   ```
+| | day | profit |
+|---|---|---|
+| 1 | Sunday | 4849.86|
+| 2 | Saturday | 4643.16 |
+   
+b) The most profitable hours
 
-   Result:
-   
-   | | day | profit |
-   |---|---|---|
-   | 1 | Sunday | 4849.86|
-   | 2 | Saturday | 4643.16 |
-   
-   b) The most profitable hours
+I have also modificated 1.1 (b) request and add `WHERE day_of_week IN ('Saturday', 'Sunday')` i.e added days of weekends
 
-   I have also modificated 1.1 (b) request and add `WHERE day_of_week IN ('Saturday', 'Sunday')` i.e added days of weekends
-
-   Result:
+Result:
    
-   | day | morning_time | lunch_time | dinner_time | evening_time | late_hours |
-   |----------|--------------|------------|-------------|--------------|------------|
-   | Saturday | 324.38 | 1456.32 | 1028.20 | 1421.68 | 412.58 |
-   | Sunday | 374.58 | 1487.80 | 840.08 | 1375.18 | 772.22 |
+| day | morning_time | lunch_time | dinner_time | evening_time | late_hours |
+|----------|--------------|------------|-------------|--------------|------------|
+| Saturday | 324.38 | 1456.32 | 1028.20 | 1421.68 | 412.58 |
+| Sunday | 374.58 | 1487.80 | 840.08 | 1375.18 | 772.22 |
 
 ### 2. Determining the popularity of orders for different types of coffee
 
