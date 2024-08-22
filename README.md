@@ -205,6 +205,8 @@ Result:
 | 5 | Saturday | 4643.16 |
 | 6 | Monday | 4541.08 |
 | 7 | Wednesday | 4363.22|
+
+The most profitable day is Tuesday 5102.06 and the least profitable day is Wednesday 4363.22. Tuesday is the most profitable day, it would be wise to focus on marketing campaigns and offers that sustain this trend. On Wednesday, additional promotions or discounts could be introduced to boost profits.
    
 b) The most profitable hours
 ```sql
