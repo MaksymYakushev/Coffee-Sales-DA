@@ -252,7 +252,27 @@ Result:
 | Wednesday | 319.88 | 1246.56 | 914.76 | 1306.92 | 575.10 |
 | Sunday | 374.58 | 1487.80 | 840.08 | 1375.18 | 772.22 |
 | Monday | 93.56 | 1589.32 | 942.00 | 1508.92 | 407.28 |
-   
+
+**Highest activity.** On all days except Monday there is a peak in activity or consumption during lunch. On Monday this indicator is even higher than on other days.
+
+**Significant consumption in the morning and evening.** Morning and evening times also show fairly high levels of consumption although they do not exceed the values characteristic of lunchtime.
+
+**Lowest consumption during late hours.** On all days of the week the lowest consumption is recorded during late hours although these values vary significantly from day to day.
+
+
+**Specific days:**
+
+**Monday.** Significantly lower consumption in the morning (93.56) but a record high during lunch (1589.32). Evening and late hours have moderate values. 
+
+**Saturday:** Consistently high consumption in the morning (324.38) and at lunchtime (1456.32) with a peak in the evening (1421.68). 
+
+**Thursday:** Even distribution of activity with slight fluctuations with the evening activity being one of the highest (1626.28). Sunday: Similar to other days with high activity during lunch (1487.80) and significant consumption during late hours (772.22).
+
+
+**Overall conclusion:**
+
+The most active or resource-intensive periods occur during lunchtime while the lowest consumption is observed during late hours. Monday and Sunday stand out with activity levels compared to other days of the week.
+
 1.2 The most peak time on weekends
    
 a) The most profitable day
