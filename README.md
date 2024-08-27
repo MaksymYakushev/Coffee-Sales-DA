@@ -266,6 +266,7 @@ Result:
 **Thursday:** Even distribution of activity with slight fluctuations with the evening activity being one of the highest (1626.28). Sunday: Similar to other days with high activity during lunch (1487.80) and significant consumption during late hours (772.22).
 
 **Overall conclusion:**
+
 The most active or resource-intensive periods occur during lunchtime while the lowest consumption is observed during late hours. Monday and Sunday stand out with activity levels compared to other days of the week.
 
 1.2 The most peak time on weekends
@@ -291,6 +292,8 @@ Result:
 |---|---|---|
 | 1 | Sunday | 4849.86|
 | 2 | Saturday | 4643.16 |
+
+We can see that the café earns approximately the same amount on Saturday and Sunday.
    
 b) The most profitable hours
 
