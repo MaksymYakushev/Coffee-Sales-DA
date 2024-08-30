@@ -336,6 +336,10 @@ Result:
 | 7 | Espresso | 39 |
 | 8 | Cocoa | 28 | 
 
+**Visualization:**
+
+![The Most Profitable Day Visualization](Images/2.1%20(vizualization).png)
+
 2.2 Determining the type of coffee purchased during peak time
 
 2.3 Percentage distribution of different types of coffee
