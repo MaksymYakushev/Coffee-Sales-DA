@@ -183,10 +183,6 @@ UPDATE coffee
 SET day_of_week = TO_CHAR(date, 'FMDay')
 ```
 
-**Visualization:**
-
-
-
 a) The most profitable day
 ```sql
 SELECT 
@@ -209,6 +205,10 @@ Result:
 | 5 | Saturday | 4643.16 |
 | 6 | Monday | 4541.08 |
 | 7 | Wednesday | 4363.22|
+
+**Visualization:**
+
+![The Most Profitable Day Visualization](Images/1.1-A-(visualization).png)
 
 The most profitable day is Tuesday 5102.06 and the least profitable day is Wednesday 4363.22. Tuesday is the most profitable day, it would be wise to focus on marketing campaigns and offers that sustain this trend. On Wednesday, additional promotions or discounts could be introduced to boost profits.
    
