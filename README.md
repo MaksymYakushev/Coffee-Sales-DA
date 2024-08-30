@@ -338,7 +338,7 @@ Result:
 
 **Visualization:**
 
-<img src="Images/2.1%20(vizualization).png" width="700" height="500">
+<img src="Images/2.1%20(vizualization).png" width="500" height="300">
 
 2.2 Determining the type of coffee purchased during peak time
 
