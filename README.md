@@ -337,9 +337,8 @@ Result:
 | 8 | Cocoa | 28 | 
 
 **Visualization:**
-<img src="Images/2.1%20(vizualization).png" width="700" height="500">
 
-![The Most Profitable Day Visualization](Images/2.1%20(vizualization).png)
+<img src="Images/2.1%20(vizualization).png" width="700" height="500">
 
 2.2 Determining the type of coffee purchased during peak time
 
