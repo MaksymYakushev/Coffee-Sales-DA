@@ -183,6 +183,10 @@ UPDATE coffee
 SET day_of_week = TO_CHAR(date, 'FMDay')
 ```
 
+**Visualization:**
+
+
+
 a) The most profitable day
 ```sql
 SELECT 
