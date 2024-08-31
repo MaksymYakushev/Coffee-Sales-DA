@@ -257,6 +257,10 @@ Result:
 | Sunday | 374.58 | 1487.80 | 840.08 | 1375.18 | 772.22 |
 | Monday | 93.56 | 1589.32 | 942.00 | 1508.92 | 407.28 |
 
+**Visualization:**
+
+![The Most Profitable Hours Visualization](Images/1.1%20B%20(vizualization).png)
+
 **General trends:**
 
 **Highest activity.** On all days except Monday there is a peak in activity or consumption during lunch. On Monday this indicator is even higher than on other days.
