@@ -105,14 +105,14 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    ```
    Result:
    
-   ```plaintext
    | cash_type | count |
+   |---|---|---|
    | 1 | cash | 89 |
    | 2 | card | 887 |
-   ```
+   
    I took the same number as the rows.
 
-6. Next I checked `money`. 
+7. Next I checked `money`. 
 
     ```sql
    SELECT 
@@ -121,11 +121,11 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    FROM coffee;
    ```
    Result:
-   
-    ```plaintext
+
    |  | min | max |
+   |---|---|---|
    | 1 | 23.02 | 40 |
-   ```
+   
    I got good and adequate results.
     
    ```sql
@@ -136,13 +136,13 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    ```
    Result:
    
-    ```plaintext
    |  | count |
+   |---|---|
    | 1 | 0 |
-   ```
+   
    And here I got 0 values which equals NULL.
 
-7. Finnaly, I checked `coffee_name`.
+8. Finnaly, I checked `coffee_name`.
    ```sql
    SELECT 
 	   COUNT(coffee_name)
@@ -151,10 +151,10 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    ```
     Result:
    
-    ```plaintext
    |  | count |
+   |---|---|---|
    | 1 | 0 |
-   ```
+   
    I got 0 values which equals NULL.
 
 ## Data Analysis
