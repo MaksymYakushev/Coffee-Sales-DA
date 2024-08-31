@@ -82,7 +82,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    ```
    Result:
    | | MIN_date | MAX_date | MIN_datetime | MAX_datetime |
-   |---|---|---|---|---|
+   | --- | --- | --- | --- | --- |
    | 1 | 2024-03-01 | 2024-07-17 | 07:33:06 | 22:55:37 |
    
    As a result I obtained accurate results. The cafe opens around 7 AM and closes at 11 PM.
@@ -106,7 +106,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    Result:
    
    | cash_type | count |
-   |---|---|---|
+   | --- | --- | --- |
    | 1 | cash | 89 |
    | 2 | card | 887 |
    
