@@ -345,6 +345,57 @@ Result:
 
 2.2 Determining the type of coffee purchased during peak time
 
+a) The type of coffee with the highest revenue during peak time
+
+```sql
+SELECT 
+    coffee_name AS type_of_coffee
+    , SUM(CASE 
+	    WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
+	        OR (EXTRACT(HOUR FROM datetime) = 9 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money
+            ELSE 0 
+          END) AS morning_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 10 AND 12 
+            	OR (EXTRACT(HOUR FROM datetime) = 12 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money
+            ELSE 0 
+          END) AS lunch_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 13 AND 15 
+            	OR (EXTRACT(HOUR FROM datetime) = 15 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money
+            ELSE 0 
+          END) AS dinner_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 16 AND 19 
+            	OR (EXTRACT(HOUR FROM datetime) = 19 AND EXTRACT(MINUTE FROM datetime) = 59) THEN money 
+            ELSE 0 
+          END) AS evening_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 20 AND 23 
+            	OR (EXTRACT(HOUR FROM datetime) = 23 AND EXTRACT(MINUTE FROM datetime) = 00) THEN money 
+            ELSE 0 
+          END) AS late_hours
+FROM coffee
+GROUP BY 1
+ORDER BY 2 DESC
+```
+
+Result:
+
+| type_of_coffee | morning_time | lunch_time | dinner_time | evening_time | late_hours |
+|---|---|---|---|---|---|
+| Latte | 600.88 | 2794.80 |1071.18 | 2380.54 | 848.94 |
+| Americano with Milk | 485.86 | 2165.26 | 1554.72 | 1972.76 | 1278.62 |
+| Cappuccino | 433.04 | 1406.70 | 1151.18 | 2584.48 | 1134.16 |
+| Americano | 339.28 | 1376.36 | 1334.32 | 879.48 | 162.62 |
+| Cortado | 246.38 | 747.96 | 571.26 | 712.70 | 167.52 |
+| Cocoa | 39 | 266.00 | 146.96 | 424.36 | 189.88 |
+| Espresso | 24	| 238.10 | 236.08 | 352.18 | 69.06 |
+| Hot Chocolate | 0 | 602.86 | 459.16 | 1145.96 | 472.04 |
+
+b) The type of coffee that sells the most (in quantity) during peak time
+
+
 2.3 Percentage distribution of different types of coffee
    
 
