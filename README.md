@@ -393,6 +393,10 @@ Result:
 | Espresso | 24	| 238.10 | 236.08 | 352.18 | 69.06 |
 | Hot Chocolate | 0 | 602.86 | 459.16 | 1145.96 | 472.04 |
 
+**Visualization:**
+
+![The Most Profitable Hours Visualization](Images/2.2%20A%20(vizualization).png)
+
 b) The type of coffee that sells the most (in quantity) during peak time
 
 ```sql
@@ -440,6 +444,10 @@ Result:
 | Cocoa | 1 | 7 | 4 | 11 | 5 |
 | Espresso | 1	| 10 | 10 | 15 | 3 |
 | Hot Chocolate | 0 | 16 | 12 | 30 | 13 |
+
+**Visualization:**
+
+![The Most Profitable Hours Visualization](Images/2.2%20B%20(vizualization).png)
 
 2.3 Percentage distribution of different types of coffee
    
