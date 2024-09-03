@@ -395,6 +395,51 @@ Result:
 
 b) The type of coffee that sells the most (in quantity) during peak time
 
+```sql
+SELECT 
+    coffee_name AS type_of_coffee
+    , SUM(CASE 
+	    WHEN EXTRACT(HOUR FROM datetime) BETWEEN 7 AND 9 
+	        OR (EXTRACT(HOUR FROM datetime) = 9 AND EXTRACT(MINUTE FROM datetime) = 59) THEN 1
+            ELSE 0 
+          END) AS morning_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 10 AND 12 
+            	OR (EXTRACT(HOUR FROM datetime) = 12 AND EXTRACT(MINUTE FROM datetime) = 59) THEN 1
+            ELSE 0 
+          END) AS lunch_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 13 AND 15 
+            	OR (EXTRACT(HOUR FROM datetime) = 15 AND EXTRACT(MINUTE FROM datetime) = 59) THEN 1
+            ELSE 0 
+          END) AS dinner_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 16 AND 19 
+            	OR (EXTRACT(HOUR FROM datetime) = 19 AND EXTRACT(MINUTE FROM datetime) = 59) THEN 1 
+            ELSE 0 
+          END) AS evening_time
+    , SUM(CASE 
+            WHEN EXTRACT(HOUR FROM datetime) BETWEEN 20 AND 23 
+            	OR (EXTRACT(HOUR FROM datetime) = 23 AND EXTRACT(MINUTE FROM datetime) = 00) THEN 1 
+            ELSE 0 
+          END) AS late_hours
+FROM coffee
+GROUP BY 1
+ORDER BY 2 DESC
+```
+
+Result:
+
+| type_of_coffee | morning_time | lunch_time | dinner_time | evening_time | late_hours |
+|---|---|---|---|---|---|
+| Latte | 16 | 73 | 28 | 63 | 23 |
+| Americano with Milk | 15 | 66 | 47 | 60 | 39 |
+| Americano | 12 | 49 | 47 | 31 | 6 |
+| Cappuccino | 12 | 37 | 30 | 68 | 30 |
+| Cortado | 9 | 26 | 20 | 25 | 6 |
+| Cocoa | 1 | 7 | 4 | 11 | 5 |
+| Espresso | 1	| 10 | 10 | 15 | 3 |
+| Hot Chocolate | 0 | 16 | 12 | 30 | 13 |
 
 2.3 Percentage distribution of different types of coffee
    
