@@ -82,12 +82,12 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    ```
    Result:
    | | MIN_date | MAX_date | MIN_datetime | MAX_datetime |
-   | --- | --- | --- | --- | --- |
+   |---|---|---|---|---|
    | 1 | 2024-03-01 | 2024-07-17 | 07:33:06 | 22:55:37 |
    
    As a result I obtained accurate results. The cafe opens around 7 AM and closes at 11 PM.
 
-5. Next I checked `cash_type`. I used function `COUNT` to count the number of rows.
+4. Next I checked `cash_type`. I used function `COUNT` to count the number of rows.
 
    ```sql
    SELECT
@@ -106,13 +106,13 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    Result:
    
    | cash_type | count |
-   | --- | --- | --- |
+   |---|---|
    | 1 | cash | 89 |
    | 2 | card | 887 |
    
    I took the same number as the rows.
 
-7. Next I checked `money`. 
+5. Next I checked `money`. 
 
     ```sql
    SELECT 
@@ -142,7 +142,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
    
    And here I got 0 values which equals NULL.
 
-8. Finnaly, I checked `coffee_name`.
+6. Finnaly, I checked `coffee_name`.
    ```sql
    SELECT 
 	   COUNT(coffee_name)
@@ -152,7 +152,7 @@ I created a database on my own server, which I named `coffee_db`. Then, I create
     Result:
    
    |  | count |
-   |---|---|---|
+   |---|---|
    | 1 | 0 |
    
    I got 0 values which equals NULL.
