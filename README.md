@@ -474,7 +474,8 @@ Result:
 
 **Visualization:**
 
-![The Most Profitable Hours Visualization](Images/2.3%20(vizualization).png)
+<img src="Images/2.3%20(vizualization).png" width="600" height="450">
+
 
    
 
