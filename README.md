@@ -450,6 +450,28 @@ Result:
 ![The Most Profitable Hours Visualization](Images/2.2%20B%20(vizualization).png)
 
 2.3 Percentage distribution of different types of coffee
+
+```sql
+SELECT
+    coffee_name AS type_of_coffee
+    , CONCAT(CEIL(COUNT(coffee_name) * 100.0 / SUM(COUNT(coffee_name)) OVER()), '%') AS percentage
+FROM coffee
+GROUP BY 1
+```
+
+Result:
+
+| type_of_coffee | percentage |
+|---|---|
+| Americano with Milk| 24% |
+| Cappuccino | 19% |
+| Americano | 15% |
+| Cortado | 9% |
+| Latte | 21% |
+| Hot Chocolate | 8% |
+| Cocoa | 3% |
+| Espresso | 4% |
+
    
 
 
