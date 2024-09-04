@@ -474,7 +474,7 @@ Result:
 
 **Visualization:**
 
-<img src="Images/2.3%20(vizualization).png" width="700" height="470">
+<img src="Images/2.3%20(vizualization).png" width="700" height="455">
 
 
    
