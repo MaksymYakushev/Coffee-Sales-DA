@@ -454,7 +454,7 @@ Result:
 ```sql
 SELECT
     coffee_name AS type_of_coffee
-    , CONCAT(CEIL(COUNT(coffee_name) * 100.0 / SUM(COUNT(coffee_name)) OVER()), '%') AS percentage
+    , CONCAT(ROUND(COUNT(coffee_name) * 100.0 / SUM(COUNT(coffee_name)) OVER(), 2), '%') AS percentage
 FROM coffee
 GROUP BY 1
 ```
@@ -463,14 +463,18 @@ Result:
 
 | type_of_coffee | percentage |
 |---|---|
-| Americano with Milk| 24% |
-| Cappuccino | 19% |
-| Americano | 15% |
-| Cortado | 9% |
-| Latte | 21% |
-| Hot Chocolate | 8% |
-| Cocoa | 3% |
-| Espresso | 4% |
+| Americano with Milk| 23.26% |
+| Cappuccino | 18.14% |
+| Americano | 14.86% |
+| Cortado | 8.81% |
+| Latte | 20.80% |
+| Hot Chocolate | 7.27% |
+| Cocoa | 2.87% |
+| Espresso | 4.00% |
+
+**Visualization:**
+
+![The Most Profitable Hours Visualization](Images/2.3%20(vizualization).png)
 
    
 
